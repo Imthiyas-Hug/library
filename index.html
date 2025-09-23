@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="book_container">
+        <div class="book">
+            <p>Title : <span class="title_name">The Hobbit</span></p>
+            <p>Author : <span class="author_name">J.R.R. Tolkien</span></p>
+            <p>Pages : <span class="total_pages">295</span></p>
+            <p>Read Status : <span class="total_pages">I had read the Book.</span></p>
+        </div>
+    </div>
+    <button id="new_book_btn">New Book</button>
+    <dialog>
+        <form>
+            <label for="title_input">Title : </label>
+            <input type="text" id="title_input" required><br>
+
+            <label for="author_input">Author : </label>
+            <input type="text" id="author_input" required><br>
+
+            <label for="page_input">Pages : </label>
+            <input type="number" id="page_input" required><br>
+
+            <input type="checkbox" id="check_read">
+            <label for="check_read">I had read the book.</label><br>
+
+            <input type="submit" id="submit_btn">
+        </form>
+    </dialog>
+    <script src="scripts.js"></script>
+</body>
+</html>
