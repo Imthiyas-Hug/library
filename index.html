@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <h1>BOOKS CATALOG</h1>
+
     <div class="book_container">
         <div class="book" id="1">
-            <p>Title : <span class="title_name">The Hobbit</span></p>
-            <p>Author : <span class="author_name">J.R.R. Tolkien</span></p>
-            <p>Pages : <span class="total_pages">295</span></p>
-            <p>Read Status : <span class="read_status ">I had read the Book.</span></p>
-            <button id="remove" data-id="1">Remove</button>
-            <button id="toggle" data-id="1">Status Toggle</button>
+            <span>1</span>
+            <div class="key_value">
+                <p><span class="card_prop">Title : </span></p>
+                <p><span class="card_value">The Hobbit</span></p>
+            </div>
+            <div class="key_value">
+                <p><span class="card_prop">Author : </span></p>
+                <p><span class="card_value">J.R.R. Tolkien</span></p>
+            </div>
+            <div class="key_value">
+                <p><span class="card_prop">Pages : </span></p>
+                <p><span class="card_value">295</span></p>
+            </div>
+            <div class="key_value">
+                <p><span class="card_prop">Read Status : </span>
+                <p><span class="card_value" style="font-style: italic;">Not yet read the Book.</span></p>
+            </div>
+            <div class="card_buttons">
+                <button data-id="1" id="removebtn">Remove</button>
+                <button data-id="1" id="togglebtn">Status Toggle</button>
+            </div>
         </div>
     </div>
-    <button id="new_book_btn">New Book</button>
+
+    <p style="text-align: center;"><button id="new_book_btn">✚ New Book</button></p>
+
     <dialog>
-        <form>
-            <label for="title_input">Title : </label>
-            <input type="text" id="title_input" required><br>
+        <form class="form_container">
+            <button id="close_btn" onclick="dialog.close()">&times;</button>
+            <div class="form_inputs">
+                <label for="title_input">Title</label>
+                <input type="text" id="title_input" required>
+            </div>
 
-            <label for="author_input">Author : </label>
-            <input type="text" id="author_input" required><br>
+            <div class="form_inputs">
+                <label for="author_input">Author</label>
+                <input type="text" id="author_input" required>
+            </div>
 
-            <label for="page_input">Pages : </label>
-            <input type="number" id="page_input" required><br>
+            <div class="form_inputs">
+                <label for="page_input">Pages</label>
+                <input type="number" id="page_input" required>
+            </div>
 
-            <input type="checkbox" id="check_read">
-            <label for="check_read">I had read the book.</label><br>
+            <div style="align-self: center;">
+                <input type="checkbox" id="check_read">
+                <label for="check_read">I had read the book.</label>
+            </div>
 
-            <input type="submit" id="submit_btn">
+            <input type="submit" id="submit_btn" style="align-self: center;">
         </form>
     </dialog>
     <script src="scripts.js"></script>
 </body>
+
 </html>

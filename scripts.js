@@ -23,6 +23,10 @@ function Book(author, title, numberOfPages, isRead, id) {
     this.id = id;
 }
 
+Book.prototype.toggle = function (isRead) {
+
+}
+
 function addBookToLibrary(author, title, numberOfPages, isRead) {
     const uuid = crypto.randomUUID();
     mylibrary.push(new Book(author, title, numberOfPages, isRead, uuid));
@@ -40,74 +44,126 @@ newBtn.addEventListener("click", (event) => {
 // addBookToLibrary('J.R.R. Tolkien', 'The Hobbit', 295, false);
 // addBookToLibrary('Harper Lee', 'To Kill a Mockingbird', 281, false);
 // addBookToLibrary('Jane Austen', 'Pride and Prejudice', 432, false);
+
 function createBookCard(title, author, numberOfPages, isRead) {
 
     if (title && author && numberOfPages) {
 
         addBookToLibrary(title, author, numberOfPages, isRead);
+
         mylibrary.forEach(elem => {
             uuid = elem.id;
         })
-        console.log(mylibrary)
-        readStatus = isRead ? 'I had read the book.' : 'Not yet read the book.';
 
-            const card = document.createElement('div');
+        readStatus = isRead ? 'I had read the Book.' : 'Not yet read the Book.';
+
+        const card = document.createElement('div');
 
         //Title
-        const p1 = document.createElement('p');
+        const div1 = document.createElement('div');
+        div1.classList.add('key_value');
         const span1 = document.createElement('span');
-        span1.classList.add('title_name');
-        span1.textContent = title;
-        p1.textContent = 'Title : ';
+        const span2 = document.createElement('span');
+        span1.classList.add('card_prop');
+        span2.classList.add('card_value');
+        span1.textContent = 'Title : ';
+        span2.textContent = title;
+        const p1 = document.createElement('p');
+        const p2 = document.createElement('p');
         p1.appendChild(span1);
+        p2.appendChild(span2);
+        div1.appendChild(p1);
+        div1.appendChild(p2);
 
         //Author
-        const p2 = document.createElement('p');
-        const span2 = document.createElement('span');
-        span2.classList.add('author_name');
-        span2.textContent = author;
-        p2.textContent = 'Author : ';
-        p2.appendChild(span2);
+        const div2 = document.createElement('div');
+        div2.classList.add('key_value');
+        const span3 = document.createElement('span');
+        const span4 = document.createElement('span');
+        span3.classList.add('card_prop');
+        span4.classList.add('card_value');
+        span3.textContent = 'Author : ';
+        span4.textContent = author;
+        const p3 = document.createElement('p');
+        const p4 = document.createElement('p');
+        p3.appendChild(span3);
+        p4.appendChild(span4);
+        div2.appendChild(p3);
+        div2.appendChild(p4);
 
         //Pages
-        const p3 = document.createElement('p');
-        const span3 = document.createElement('span');
-        span3.classList.add('total_pages');
-        span3.textContent = numberOfPages;
-        p3.textContent = 'Pages : ';
-        p3.appendChild(span3);
+        const div3 = document.createElement('div');
+        div3.classList.add('key_value');
+        const span5 = document.createElement('span');
+        const span6 = document.createElement('span');
+        span5.classList.add('card_prop');
+        span6.classList.add('card_value');
+        span5.textContent = 'Pages : ';
+        span6.textContent = numberOfPages;
+        const p5 = document.createElement('p');
+        const p6 = document.createElement('p');
+        p5.appendChild(span5);
+        p6.appendChild(span6);
+        div3.appendChild(p5);
+        div3.appendChild(p6);
 
         //Read Status
-        const p4 = document.createElement('p');
-        const span4 = document.createElement('span');
-        span4.classList.add('read_status');
-        span4.textContent = readStatus;
-        p4.textContent = 'Read Status : ';
-        p4.appendChild(span4);
+        const div4 = document.createElement('div');
+        div4.classList.add('key_value');
+        const span7 = document.createElement('span');
+        const span8 = document.createElement('span');
+        span7.classList.add('card_prop');
+        span8.classList.add('card_value');
+        span7.textContent = 'Read Status : ';
+        span8.textContent = readStatus;
+        span8.style.fontStyle = 'italic';
+        const p7 = document.createElement('p');
+        const p8 = document.createElement('p');         
+        p7.appendChild(span7);
+        p8.appendChild(span8);
+        div4.appendChild(p7);
+        div4.appendChild(p8);
 
         // Remove Button
+        const div5 = document.createElement('div');
+        div5.classList.add('card_buttons')
         const removeBtn = document.createElement('button');
+        removeBtn.id = 'removebtn'
         removeBtn.textContent = 'Remove';
         removeBtn.dataset.id = uuid;
         removeBtn.addEventListener('click', (event) => {
             books.removeChild(document.getElementById(event.target.dataset.id));
         });
 
-        //Append title,author,pages,readStatus,removeButton
-        card.appendChild(p1);
-        card.appendChild(p2);
-        card.appendChild(p3);
-        card.appendChild(p4);
-        card.appendChild(removeBtn);
+        // Toggle Button
+        const toggleBtn = document.createElement('button');
+        toggleBtn.textContent = 'Status Toggle';
+        toggleBtn.id = 'togglebtn';
+        toggleBtn.dataset.id = uuid;
+        toggleBtn.addEventListener('click', () => {
+            if (isRead) {
+                readStatus = 'Not yet read the Book.';
+                isRead = false;
+            }
+            else {
+                readStatus = 'I had read the Book.'
+                isRead = true;
+            }
+            span8.textContent = readStatus;
+        })
+        div5.appendChild(removeBtn);
+        div5.appendChild(toggleBtn);
 
+        //Append title,author,pages,readStatus,removeButton,toggleBtn
+        card.append(div1,div2,div3,div4,div5);
         card.classList.add('book');
-        console.log(uuid);
         card.id = uuid;
         books.appendChild(card);
 
         dialog.close();
     }
 }
+
 submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
     title = title_input.value;
@@ -115,4 +171,4 @@ submitBtn.addEventListener("click", (event) => {
     numberOfPages = page_input.value;
     isRead = check_read.checked;
     createBookCard(title, author, numberOfPages, isRead);
-});``
+});
