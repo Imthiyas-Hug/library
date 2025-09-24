@@ -7,7 +7,8 @@
 .book_container{
     border: 1px solid black;
     padding: 50px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
     gap: 10px;
 }
 .book{
