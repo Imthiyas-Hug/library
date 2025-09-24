@@ -55,6 +55,8 @@ submitBtn.addEventListener("click", (event) => {
         mylibrary.forEach((element) => {
 
             const card = document.createElement('div');
+            console.log("card",card);
+            
 
             const p1 = document.createElement('p');
             const span1 = document.createElement('span')
