@@ -1,8 +1,8 @@
 body {
     padding: 0;
     box-sizing: border-box;
-    background-color: hsl(193, 100%, 98%);
-    background: linear-gradient(90deg, hsl(25, 100%, 95%), hsl(331, 93%, 95%), hsl(194, 100%, 95%), hsl(145, 100%, 95%));
+    background-color: #fffaf0;
+    background-color: f0f4ff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -18,26 +18,38 @@ h1 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientShift 5s ease infinite;
+
 }
 
 .book_container {
-    padding: 50px;
-    border-radius: 30px;
+    padding: 30px;
+    border-radius: 12px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(353px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 50px;
-    background-color: white;
+    background: hsla(145, 63%, 95%, 0.4);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .book {
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
     box-shadow:
-        rgba(0, 0, 0, 0.1) -5px 5px,
-        rgba(0, 0, 0, 0.08) -10px 10px,
-        rgba(0, 0, 0, 0.06) -15px 15px,
-        rgba(0, 0, 0, 0.04) -20px 20px,
-        rgba(0, 0, 0, 0.02) -25px 25px;
+        rgba(46, 204, 113, 0.4) 5px 5px,
+        rgba(46, 204, 113, 0.3) 10px 10px,
+        rgba(46, 204, 113, 0.2) 15px 15px,
+        rgba(46, 204, 113, 0.1) 20px 20px,
+        rgba(46, 204, 113, 0.05) 25px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 
+    rgba(200, 200, 200, 0.4) 5px 5px,
+    rgba(180, 180, 180, 0.3) 10px 10px,
+    rgba(160, 160, 160, 0.2) 15px 15px,
+    rgba(140, 140, 140, 0.1) 20px 20px,
+    rgba(120, 120, 120, 0.05) 25px 25px; */
+
     padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 12px;
 }
 
 .key_value {
@@ -46,39 +58,18 @@ h1 {
 }
 
 .card_prop {
+
     font-weight: bold;
-    background: linear-gradient(to right, hsl(193, 28%, 31%), hsl(213, 28%, 51%));
+    background: linear-gradient(90deg, #1e90ff, #00c9ff);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
 }
 
 .card_value {
     font-weight: bold;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
+    background: linear-gradient(90deg, #ff5733, #ff8c00);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
-}
-
-.card_buttons {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.card_buttons button {
-    padding: 10px;
-    border: none;
-    width: 30%;
-    border-radius: 5px;
-    color: white;
-    background: linear-gradient(to right, hsl(0, 0%, 0%), hsl(213, 22%, 39%));
-    cursor: pointer;
 }
 
 #submit_btn {
@@ -91,36 +82,6 @@ h1 {
     background: linear-gradient(to right, hsl(193, 100%, 60%), hsl(213, 100%, 60%));
 }
 
-#close_btn {
-    background-color: #ff0000;
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    align-self: end;
-}
-
-#close_btn:hover {
-    background-color: #cc0000;
-}
-
-#close_btn:active {
-    background: linear-gradient(to right, hsl(193, 100%, 85%), hsl(213, 100%, 85%));
-}
-
-#togglebtn {
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-}
-
-#togglebtn:hover {
-    background: linear-gradient(to right, hsl(193, 100%, 70%), hsl(213, 100%, 70%));
-}
-
-#togglebtn:active {
-    background: linear-gradient(to right, hsl(193, 100%, 85%), hsl(213, 100%, 85%));
-}
-
 #submit_btn:hover {
     background: linear-gradient(to right, hsl(193, 100%, 70%), hsl(213, 100%, 70%));
 }
@@ -129,15 +90,8 @@ h1 {
     background: linear-gradient(to right, hsl(193, 100%, 85%), hsl(213, 100%, 85%));
 }
 
-#removebtn:hover {
-    background: linear-gradient(to right, hsl(0, 0%, 30%), hsl(213, 22%, 59%));
-}
-
-#removebtn:active {
-    background: linear-gradient(to right, hsl(0, 0%, 45%), hsl(213, 22%, 74%));
-}
-
 #new_book_btn {
+    font-weight: bold;
     font-size: 24px;
     padding: 8px 16px;
     border: none;
@@ -170,29 +124,62 @@ h1 {
 .form_container input {
     border: none;
     border-radius: 5px;
-    background-color: hsl(25, 100%, 95%);
+    background-color: hsl(193, 100%, 95%);
     padding: 10px;
 }
 
 .form_container input:focus {
     outline: none;
-    border: 1px solid #ff6a00;
+    border: 1px solid #0072ff;
 }
 
 label {
     font-weight: 900;
-    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c3ff, #00ff6c);
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 dialog {
-
     border: none;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 35vh;
 }
 
 dialog::backdrop {
-    background: linear-gradient(90deg, hsl(25, 100%, 90%, 0.9), hsl(331, 93%, 98%, 0.9), hsl(194, 100%, 90%, 0.9), hsl(145, 100%, 90%, 0.9));
+    background-color: hsl(193, 100%, 98%, 0.9);
+}
+
+.icons {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    align-items: center;
+}
+
+#toggle_icon {
+    cursor: pointer;
+}
+
+#toggle_icon:hover {
+    background-color: hsl(0, 0%, 85%);
+}
+
+#trash_icon {
+    cursor: pointer;
+}
+
+#trash_icon:hover {
+    background-color: hsl(0, 0%, 85%);
+}
+
+.book_name {
+    background: linear-gradient(90deg, #00f260, #0575e6);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 3px 7px 3px 7px;
+    color: white;
 }

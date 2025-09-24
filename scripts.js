@@ -7,6 +7,9 @@ const title_input = document.querySelector('#title_input');
 const author_input = document.querySelector('#author_input');
 const page_input = document.querySelector('#page_input');
 const check_read = document.querySelector('#check_read');
+const trashIcon = document.querySelector('#trash_icon');
+const offIcon = document.querySelector('#off_icon');
+const onIcon = document.querySelector('#on_icon');
 
 let title;
 let author;
@@ -126,27 +129,31 @@ function createBookCard(title, author, numberOfPages, isRead) {
 
         // Remove Button
         const div5 = document.createElement('div');
-        div5.classList.add('card_buttons')
-        const removeBtn = document.createElement('button');
-        removeBtn.id = 'removebtn'
-        removeBtn.textContent = 'Remove';
+        div5.classList.add('icons')
+        const removeBtn = document.createElement('img');
+        removeBtn.style.height = '30px';
+        removeBtn.src = "images/trash.png";
+        removeBtn.id = 'trash_icon';
         removeBtn.dataset.id = uuid;
         removeBtn.addEventListener('click', (event) => {
             books.removeChild(document.getElementById(event.target.dataset.id));
         });
 
         // Toggle Button
-        const toggleBtn = document.createElement('button');
-        toggleBtn.textContent = 'Status Toggle';
-        toggleBtn.id = 'togglebtn';
+        const toggleBtn = document.createElement('img');
+        toggleBtn.style.height = '40px';
+        toggleBtn.src = isRead ? 'images/toggle-button (1).png' : "images/toggle-button.png" ;
+        toggleBtn.id = 'toggle_icon';
         toggleBtn.dataset.id = uuid;
         toggleBtn.addEventListener('click', () => {
             if (isRead) {
                 readStatus = 'Not yet read the Book.';
+                toggleBtn.src = "images/toggle-button.png";
                 isRead = false;
             }
             else {
-                readStatus = 'I had read the Book.'
+                readStatus = 'I had read the Book.';
+                toggleBtn.src = 'images/toggle-button (1).png';
                 isRead = true;
             }
             span8.textContent = readStatus;
@@ -155,7 +162,13 @@ function createBookCard(title, author, numberOfPages, isRead) {
         div5.appendChild(toggleBtn);
 
         //Append title,author,pages,readStatus,removeButton,toggleBtn
-        card.append(div1,div2,div3,div4,div5);
+        const name = document.createElement('span');
+        const br1 = document.createElement('br');
+        const br2 = document.createElement('br');
+        name.classList.add('book_name');
+        name.textContent = 'Book';
+        const hr = document.createElement('hr')
+        card.append(name,br1,br2,div1,div2,div3,div4,hr,div5);
         card.classList.add('book');
         card.id = uuid;
         books.appendChild(card);
