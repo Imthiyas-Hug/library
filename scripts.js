@@ -40,14 +40,7 @@ newBtn.addEventListener("click", (event) => {
 // addBookToLibrary('J.R.R. Tolkien', 'The Hobbit', 295, false);
 // addBookToLibrary('Harper Lee', 'To Kill a Mockingbird', 281, false);
 // addBookToLibrary('Jane Austen', 'Pride and Prejudice', 432, false);
-
-submitBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    title = title_input.value;
-    author = author_input.value;
-    numberOfPages = page_input.value;
-    isRead = check_read.checked;
-    console.log('clicked')
+function createBookCard(title, author, numberOfPages, isRead) {
 
     if (title && author && numberOfPages) {
 
@@ -106,19 +99,20 @@ submitBtn.addEventListener("click", (event) => {
         card.appendChild(p3);
         card.appendChild(p4);
         card.appendChild(removeBtn);
+
         card.classList.add('book');
         console.log(uuid);
         card.id = uuid;
         books.appendChild(card);
 
         dialog.close();
-
     }
-
-});
-
-const togglebtn = document.getElementById('toggle')
-togglebtn.addEventListener('click',(event)=>{
-    togglebtn.classList.add('read')
-    console.log(event);
-})
+}
+submitBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    title = title_input.value;
+    author = author_input.value;
+    numberOfPages = page_input.value;
+    isRead = check_read.checked;
+    createBookCard(title, author, numberOfPages, isRead);
+});``
