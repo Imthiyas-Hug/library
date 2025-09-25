@@ -5,8 +5,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
 }
 
 h1 {
@@ -21,7 +20,6 @@ h1 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientShift 5s ease infinite;
-
 }
 
 .book_container {
@@ -33,11 +31,10 @@ h1 {
 }
 
 .book {
-    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    padding: 20px 20px 10px 20px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 12px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .key_value {
@@ -67,7 +64,7 @@ h1 {
     font-weight: 900;
     cursor: pointer;
     color: white;
-    background: linear-gradient(to right, hsl(193, 100%, 60%), hsl(213, 100%, 60%));
+    background-color: hsl(193, 100%, 40%);
 }
 
 #submit_btn:hover {
@@ -103,12 +100,6 @@ h1 {
     gap: 20px;
 }
 
-.form_inputs {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2px;
-}
-
 .form_container input {
     border: none;
     border-radius: 5px;
@@ -116,11 +107,26 @@ h1 {
     padding: 10px;
 }
 
+.form_container label {
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff5733, #ff8c00);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .form_container input:focus {
     outline: none;
     border: 1px solid #0072ff;
 }
-
+.form_input{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+input[type='checkbox']{
+    width: 16px;
+    height: 16px;
+}
 dialog {
     border: none;
     border-radius: 5px;
@@ -128,7 +134,7 @@ dialog {
 }
 
 dialog::backdrop {
-     background-color: hsl(40, 100%, 97%,0.9);
+    background-color: hsl(40, 100%, 97%, 0.9);
 }
 
 .icons {
@@ -143,7 +149,7 @@ dialog::backdrop {
 }
 
 #toggle_icon:hover {
-    background-color: hsl(0, 0%, 85%);
+    background-color: hsl(0, 0%, 95%);
 }
 
 #trash_icon {
@@ -151,7 +157,7 @@ dialog::backdrop {
 }
 
 #trash_icon:hover {
-    background-color: hsl(0, 0%, 85%);
+    background-color: hsl(0, 0%, 95%);
 }
 
 .book_name {
@@ -160,4 +166,16 @@ dialog::backdrop {
     font-weight: bold;
     padding: 3px 7px 3px 7px;
     color: white;
+}
+
+.close-button {
+  text-align: end;
+  cursor: pointer;
+  font-size: 18px; 
+  font-weight: bold;
+  color: #888;
+}
+
+.close-button:hover {
+  color: #000
 }

@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title >Library</title>
+    <title>Library</title>
     <link rel="icon" type="image/png" href="images/library_9043296.png">
-    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>BOOKS CATALOG</h1>
-    
     <div class="book_container">
         <!-- <div class="book" id="1">
             <span class="book_name">Book</span><br><br>
@@ -31,40 +30,31 @@
             </div>
             
             <div class="key_value">
-                <p><span class="card_prop">Read Status : </span>
+                <p><span class="card_prop">Status : </span>
                 <p><span class="card_value" style="font-style: italic;">Not yet read the Book.</span></p>
             </div>
             <hr>
-            <div class="card_buttons">
-                <button data-id="1" id="removebtn"><img src="" alt=""></button>
-                <button data-id="1" id="togglebtn">Status Toggle</button>
+            <div class="icons">
+                <img src="images/trash.png" alt="trash icon" id="trash_icon" height="30px">
+                <img src="images/toggle-button.png" alt="toggle icon" id="toggle_icon" height="40px">
             </div>
         </div> -->
     </div>
-
+    
     <p style="text-align: center;"><button id="new_book_btn">✚ Add Book</button></p>
 
-    <dialog>
+    <dialog closedby="closerequest">
         <form class="form_container">
-            <span>Add new Book</span>
-            <div class="form_inputs">
-                <input type="text" id="title_input" required placeholder="Title">
-            </div>
-
-            <div class="form_inputs">
-                <input type="text" id="author_input" required placeholder="Author">
-            </div>
-
-            <div class="form_inputs">
-                <input type="number" id="page_input" required placeholder="Pages">
-            </div>
-
-            <div style="align-self: center;">
+            <span class="close-button" onclick="dialog.close()">&times;</span>
+            <span style="font-weight: bold;text-align: center;">Add New Book</span>
+            <input type="text" id="title_input" required placeholder="Title">
+            <input type="text" id="author_input" required placeholder="Author">
+            <input type="number" id="page_input" required placeholder="Pages">
+            <div class="form_input">
                 <input type="checkbox" id="check_read">
                 <label for="check_read">Have you read it ?</label>
             </div>
-
-            <input type="submit" id="submit_btn" style="align-self: center;">
+            <input type="submit" value="Add to library" id="submit_btn" style="align-self: center;">
         </form>
     </dialog>
     <script src="scripts.js"></script>

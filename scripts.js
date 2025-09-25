@@ -7,9 +7,6 @@ const title_input = document.querySelector('#title_input');
 const author_input = document.querySelector('#author_input');
 const page_input = document.querySelector('#page_input');
 const check_read = document.querySelector('#check_read');
-const trashIcon = document.querySelector('#trash_icon');
-const offIcon = document.querySelector('#off_icon');
-const onIcon = document.querySelector('#on_icon');
 
 let title;
 let author;
@@ -26,9 +23,6 @@ function Book(author, title, numberOfPages, isRead, id) {
     this.id = id;
 }
 
-Book.prototype.toggle = function (isRead) {
-
-}
 
 function addBookToLibrary(author, title, numberOfPages, isRead) {
     const uuid = crypto.randomUUID();
