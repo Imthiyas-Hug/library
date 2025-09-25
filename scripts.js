@@ -117,7 +117,7 @@ function createBookCard(title, author, numberOfPages, isRead) {
         const span8 = document.createElement('span');
         span7.classList.add('card_prop');
         span8.classList.add('card_value');
-        span7.textContent = 'Read Status : ';
+        span7.textContent = 'Status : ';
         span8.textContent = readStatus;
         span8.style.fontStyle = 'italic';
         const p7 = document.createElement('p');

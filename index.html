@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
-    <link rel="stylesheet" href="style.css">
+    <title >Library</title>
+    <link rel="icon" type="image/png" href="images/library_9043296.png">
+    <link rel="stylesheet" href="style.css" >
 </head>
 
 <body>
@@ -41,29 +42,26 @@
         </div> -->
     </div>
 
-    <p style="text-align: center;"><button id="new_book_btn">✚ New Book</button></p>
+    <p style="text-align: center;"><button id="new_book_btn">✚ Add Book</button></p>
 
     <dialog>
         <form class="form_container">
-
+            <span>Add new Book</span>
             <div class="form_inputs">
-                <label for="title_input">Title</label>
-                <input type="text" id="title_input" required>
+                <input type="text" id="title_input" required placeholder="Title">
             </div>
 
             <div class="form_inputs">
-                <label for="author_input">Author</label>
-                <input type="text" id="author_input" required>
+                <input type="text" id="author_input" required placeholder="Author">
             </div>
 
             <div class="form_inputs">
-                <label for="page_input">Pages</label>
-                <input type="number" id="page_input" required>
+                <input type="number" id="page_input" required placeholder="Pages">
             </div>
 
             <div style="align-self: center;">
                 <input type="checkbox" id="check_read">
-                <label for="check_read">I had read the book.</label>
+                <label for="check_read">Have you read it ?</label>
             </div>
 
             <input type="submit" id="submit_btn" style="align-self: center;">
